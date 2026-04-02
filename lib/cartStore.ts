@@ -1,0 +1,89 @@
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import { Product } from './products';
+
+export interface CartItem {
+  product: Product;
+  quantity: number;
+  packSize: 'single' | '6-pack' | '12-pack';
+}
+
+interface CartStore {
+  items: CartItem[];
+  isOpen: boolean;
+  addItem: (product: Product, packSize?: 'single' | '6-pack' | '12-pack') => void;
+  removeItem: (productId: number) => void;
+  updateQuantity: (productId: number, quantity: number) => void;
+  clearCart: () => void;
+  toggleCart: () => void;
+  openCart: () => void;
+  closeCart: () => void;
+  getTotal: () => number;
+  getItemCount: () => number;
+}
+
+export const useCartStore = create<CartStore>()(
+  persist(
+    (set, get) => ({
+      items: [],
+      isOpen: false,
+
+      addItem: (product, packSize = 'single') => {
+        const items = get().items;
+        const existingItem = items.find(
+          item => item.product.id === product.id && item.packSize === packSize
+        );
+
+        if (existingItem) {
+          set({
+            items: items.map(item =>
+              item.product.id === product.id && item.packSize === packSize
+                ? { ...item, quantity: item.quantity + 1 }
+                : item
+            )
+          });
+        } else {
+          set({ items: [...items, { product, quantity: 1, packSize }] });
+        }
+      },
+
+      removeItem: (productId) => {
+        set({ items: get().items.filter(item => item.product.id !== productId) });
+      },
+
+      updateQuantity: (productId, quantity) => {
+        if (quantity <= 0) {
+          get().removeItem(productId);
+        } else {
+          set({
+            items: get().items.map(item =>
+              item.product.id === productId ? { ...item, quantity } : item
+            )
+          });
+        }
+      },
+
+      clearCart: () => set({ items: [] }),
+
+      toggleCart: () => set({ isOpen: !get().isOpen }),
+      openCart: () => set({ isOpen: true }),
+      closeCart: () => set({ isOpen: false }),
+
+      getTotal: () => {
+        return get().items.reduce((total, item) => {
+          let price = item.product.price;
+          if (item.packSize === '6-pack') price = price * 6 * 0.9;
+          if (item.packSize === '12-pack') price = price * 12 * 0.82;
+          return total + (price * item.quantity);
+        }, 0);
+      },
+
+      getItemCount: () => {
+        return get().items.reduce((count, item) => count + item.quantity, 0);
+      }
+    }),
+    {
+      name: 'fuelbar-cart'
+    }
+  )
+);
