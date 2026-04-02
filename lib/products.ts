@@ -38,7 +38,7 @@ export const products: Product[] = [
     gradient: "from-[#3B1A0A] to-[#BD8651]",
     ingredients: ["Dates", "Dark Cocoa", "Almonds", "Whey Protein", "Sea Salt"],
     tags: ["High Protein", "Gluten Free", "No Added Sugar"],
-    image: "Purple.png",
+    image: "p1.jpg",
     macros: { protein: 22, carbs: 28, fat: 9, fiber: 4 }
   },
   {
@@ -56,7 +56,7 @@ export const products: Product[] = [
     gradient: "from-[#D9298E] to-[#FFB4C1]",
     ingredients: ["Cranberries", "Blueberries", "Rolled Oats", "Whey Protein", "Chia Seeds"],
     tags: ["Antioxidant Rich", "Vegan Option", "Low Carb"],
-    image: "green.png",
+    image: "p2.jpg",
     macros: { protein: 18, carbs: 24, fat: 7, fiber: 6 }
   },
   {
@@ -74,7 +74,7 @@ export const products: Product[] = [
     gradient: "from-[#BD8651] to-[#F1EA03]",
     ingredients: ["Peanut Butter", "Dates", "Honey", "Whey Protein", "Flaxseed"],
     tags: ["High Protein", "Energy Boost", "No Artificial Flavour"],
-    image: "orange.png",
+    image: "p1.jpg",
     macros: { protein: 20, carbs: 26, fat: 12, fiber: 3 }
   },
   {
@@ -92,7 +92,7 @@ export const products: Product[] = [
     gradient: "from-[#F1EBDC] to-[#FFB4C1]",
     ingredients: ["Cashews", "Vanilla Bean", "Oat Flour", "Whey Protein", "Coconut Oil"],
     tags: ["No Added Sugar", "Gut Friendly", "High Protein"],
-    image: "mint.png",
+    image: "p2.jpg",
     macros: { protein: 19, carbs: 22, fat: 8, fiber: 5 }
   },
   {
@@ -110,7 +110,7 @@ export const products: Product[] = [
     gradient: "from-[#F1EBDC] to-[#FFB4C1]",
     ingredients: ["Cashews", "Vanilla Bean", "Oat Flour", "Whey Protein", "Coconut Oil"],
     tags: ["No Added Sugar", "Gut Friendly", "High Protein"],
-    image: "choco.png",
+    image: "p1.jpg",
     macros: { protein: 19, carbs: 22, fat: 8, fiber: 5 }
   },
   {
@@ -128,7 +128,7 @@ export const products: Product[] = [
     gradient: "from-[#F1EBDC] to-[#FFB4C1]",
     ingredients: ["Cashews", "Vanilla Bean", "Oat Flour", "Whey Protein", "Coconut Oil"],
     tags: ["No Added Sugar", "Gut Friendly", "High Protein"],
-    image: "white.png",
+    image: "p2.jpg",
     macros: { protein: 19, carbs: 22, fat: 8, fiber: 5 }
   },{
     id: 7,
@@ -145,7 +145,7 @@ export const products: Product[] = [
     gradient: "from-[#F1EBDC] to-[#FFB4C1]",
     ingredients: ["Cashews", "Vanilla Bean", "Oat Flour", "Whey Protein", "Coconut Oil"],
     tags: ["No Added Sugar", "Gut Friendly", "High Protein"],
-    image: "pink.png",
+    image: "p1.jpg",
     macros: { protein: 19, carbs: 22, fat: 8, fiber: 5 }
   },
   {
@@ -163,7 +163,7 @@ export const products: Product[] = [
     gradient: "from-[#F1EBDC] to-[#FFB4C1]",
     ingredients: ["Cashews", "Vanilla Bean", "Oat Flour", "Whey Protein", "Coconut Oil"],
     tags: ["No Added Sugar", "Gut Friendly", "High Protein"],
-    image: "berry.png",
+    image: "p2.jpg",
     macros: { protein: 19, carbs: 22, fat: 8, fiber: 5 }
   }
 ];

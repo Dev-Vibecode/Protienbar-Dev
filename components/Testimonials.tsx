@@ -14,9 +14,10 @@ export default function Testimonials() {
     const product = products.find(p => p.id === review.productId);
 
     return (
-      <div className="flex-shrink-0 w-72 bg-white rounded-3xl p-6 shadow-lg space-y-4">
+      // Card: White with Rich Chocolate text
+      <div className="flex-shrink-0 w-72 bg-white rounded-3xl p-6 shadow-xl space-y-4 border border-[#4B2C20]/5">
         <div className="flex items-center space-x-3">
-          <div className="relative w-12 h-12 rounded-full overflow-hidden">
+          <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#DAA520]">
             <Image
               src={review.photo}
               alt={review.name}
@@ -27,9 +28,9 @@ export default function Testimonials() {
           </div>
           <div>
             <div className="flex items-center space-x-1">
-              <span className="font-bold text-dark">{review.name}</span>
+              <span className="font-bold text-[#4B2C20]">{review.name}</span>
               {review.verified && (
-                <span className="text-green-500 text-xs">✓ Verified</span>
+                <span className="text-[#DAA520] text-[10px] font-bold uppercase tracking-tighter">✓ Verified</span>
               )}
             </div>
             <div className="flex items-center">
@@ -37,20 +38,21 @@ export default function Testimonials() {
                 <Star
                   key={i}
                   size={12}
-                  className={i < review.rating ? 'fill-yellow text-yellow' : 'text-gray-300'}
+                  className={i < review.rating ? 'fill-[#DAA520] text-[#DAA520]' : 'text-gray-200'}
                 />
               ))}
             </div>
           </div>
         </div>
 
-        <p className="text-sm text-gray-700 leading-relaxed">
-          {review.text}
+        <p className="text-sm text-[#4B2C20]/80 leading-relaxed italic">
+          "{review.text}"
         </p>
 
         {product && (
-          <div className="inline-block bg-offwhite px-3 py-1 rounded-full">
-            <span className="text-xs font-mono text-purple font-bold">
+          // Product Tag: Deep Maroon (#800020)
+          <div className="inline-block bg-[#800020]/10 px-3 py-1 rounded-full border border-[#800020]/20">
+            <span className="text-[10px] font-mono text-[#800020] font-bold uppercase tracking-widest">
               {product.name}
             </span>
           </div>
@@ -60,21 +62,26 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-offwhite overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 mb-12">
+    // Background: Millet Cream (#FDF5E6)
+    <section className="py-16 sm:py-24 bg-[#FDF5E6] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 mb-12 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center space-y-2"
+          className="space-y-2"
         >
-          <h2 className="font-bebas text-purple text-5xl sm:text-6xl lg:text-7xl tracking-wider">
+          <h2 className="font-bebas text-[#800020] text-5xl sm:text-6xl lg:text-8xl tracking-wider">
             THE PEOPLE HAVE SPOKEN
           </h2>
+          <p className="font-mono text-[#4B2C20]/60 text-xs font-bold tracking-widest uppercase">
+            Trusted by 10,000+ athletes worldwide
+          </p>
         </motion.div>
       </div>
 
       <div className="space-y-6">
+        {/* Marquee effect */}
         <div className="flex animate-marquee">
           <div className="flex space-x-6 pr-6">
             {[...topReviews, ...topReviews].map((review, index) => (
