@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Search, Heart, ShoppingCart, Menu, X } from 'lucide-react';
+import { Search, Heart, ShoppingCart, Menu, X, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCartStore } from '@/lib/cartStore';
 
@@ -76,6 +76,13 @@ export default function Navbar() {
               >
                 <Heart size={20} />
               </button>
+              <Link
+                href="/admin/login"
+                className="p-2 text-purple hover:text-pink transition-colors hidden sm:block"
+                aria-label="Admin Login"
+              >
+                <User size={20} />
+              </Link>
               <button
                 onClick={openCart}
                 className="relative p-2 text-purple hover:text-pink transition-colors"

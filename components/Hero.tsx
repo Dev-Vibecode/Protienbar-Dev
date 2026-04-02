@@ -37,7 +37,7 @@ export default function Hero() {
           >
             <motion.div variants={item}>
               <span className="inline-block bg-yellow text-dark font-mono text-xs sm:text-sm px-4 py-2 rounded-full font-bold uppercase tracking-wide">
-                CLEAN LABEL PROTEIN 2025
+                CLEAN LABEL PROTEIN 2026
               </span>
             </motion.div>
 
@@ -93,7 +93,7 @@ export default function Hero() {
               variants={item}
               className="inline-flex items-center space-x-2 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full"
             >
-              <span className="text-yellow">⭐</span>
+              {/* <span className="text-yellow">⭐</span> */}
               <span className="text-sm font-bold text-purple">4.8</span>
               <span className="text-sm text-gray-600">|</span>
               <span className="text-sm text-gray-600">Trusted by 10,000+ athletes</span>
@@ -108,12 +108,12 @@ export default function Hero() {
           >
             <div className="relative w-full aspect-square max-w-md mx-auto">
               <Image
-                src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=600"
+                src="img1.png"
                 alt="FUELBAR Protein Bar"
                 fill
-                className="object-contain drop-shadow-2xl"
+                className="object-contain drop-shadow-2xl scale-110"
                 priority
-                sizes="(max-width: 768px) 100vw, 50vw"
+                // sizes="(max-width: 868px) 100vw, 50vw"
               />
 
               <motion.div

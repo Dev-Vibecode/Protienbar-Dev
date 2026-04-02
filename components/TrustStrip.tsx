@@ -19,7 +19,7 @@ export default function TrustStrip() {
           {allMessages.map((message, index) => (
             <span
               key={index}
-              className="text-yellow font-mono text-sm sm:text-base font-bold uppercase tracking-wider mx-6 sm:mx-8"
+              className="text-white font-mono text-sm sm:text-base font-bold uppercase tracking-wider mx-6 sm:mx-8"
             >
               {message} ✦
             </span>

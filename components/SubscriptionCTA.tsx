@@ -20,7 +20,7 @@ export default function SubscriptionCTA() {
   return (
     <section id="subscribe" className="relative py-20 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-purple via-pink to-yellow"
-           style={{ backgroundImage: 'linear-gradient(135deg, #640184 0%, #D9298E 50%, #F1EA03 100%)' }} />
+           style={{ backgroundImage: 'linear-gradient(135deg, #140547 0%, #e4194b 50%, #220e59 100%)' }} />
       <div className="grain-texture" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-16 text-center">
